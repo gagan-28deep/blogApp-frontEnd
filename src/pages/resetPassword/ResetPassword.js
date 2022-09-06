@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "./resetPassword.css";
+import { useNavigate } from "react-router-dom";
 
 export const ResetPassword = () => {
   const [otp, setOtp] = useState("");
@@ -9,6 +10,7 @@ export const ResetPassword = () => {
   const [password, setResetPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const navigate = useNavigate();
   const handleReset = async (e) => {
     // console.log("Request to backend from reset page");
     try {
@@ -23,6 +25,7 @@ export const ResetPassword = () => {
         toast.success(
           "Password reset successfully , Please Login with new password"
         );
+        navigate("/login");
       }
     } catch (err) {
       if (err.message == "Request failed with status code 404") {
