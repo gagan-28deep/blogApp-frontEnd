@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 // import toastify
 import { toast } from "react-toastify";
 
+import { useNavigate } from "react-router-dom";
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -13,6 +15,7 @@ const Register = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,8 +30,9 @@ const Register = () => {
       // console.log("Reg user", res);
       if (res.status == 201) {
         toast.success("Registered Successfully");
+        navigate("/login")
       }
-      res.data && window.location.replace("/login");
+      // res.data && window.location.replace("/login");
       setLoading(false);
       // res.data && window.location.replace("/login");
     } catch (err) {
