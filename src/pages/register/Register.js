@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import toastify
 import { toast } from "react-toastify";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
