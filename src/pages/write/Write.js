@@ -25,12 +25,15 @@ const Write = () => {
       // console.log("Request to server from Write page", user);
       // console.log("data", newData);
 
-      let res = await axios.post("https://blogapp-backend18.herokuapp.com/api/v1/post", {
-        username: user?.user.username,
-        title,
-        description,
-        photo: uploadFile ? uploadFile.name : user.profilePic,
-      });
+      let res = await axios.post(
+        "https://blogapp-backend18.herokuapp.com/api/v1/post",
+        {
+          username: user?.user.username,
+          title,
+          description,
+          photo: uploadFile ? uploadFile.name : user.profilePic,
+        }
+      );
       if (uploadFile) {
         try {
           const data = new FormData();
@@ -41,12 +44,15 @@ const Write = () => {
           data.append("uploadFile", uploadFile);
           res.photo = fileName;
           // const uploadRes=await axios.post("/api/v1/upload", data);
-          axios.post("https://blogapp-backend18.herokuapp.com/api/v1/upload", data);
+          axios.post(
+            "https://blogapp-backend18.herokuapp.com/api/v1/upload",
+            data
+          );
           if (res.status === 200) {
             toast.success("Uploaded successfully");
             console.log("res 46", res.data);
             // navigate("/post/" + res.data.savedPost._id);
-            // return 
+            // return
           }
           // else if (res.status == 201) {
           //   toast.success("Post created successfully");
