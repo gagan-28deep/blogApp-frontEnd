@@ -1,0 +1,56 @@
+.register{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://images.pexels.com/photos/3584973/pexels-photo-3584973.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size: cover;
+}
+.registerTitle{
+    font-size: 50px;
+}
+.registerForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.registerForm>label{
+    margin: 10px 0;
+}
+.registerInput{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+}
+.registerInput:focus{
+    outline: none;
+}
+.registerButton{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: teal ;
+    color: white;
+    padding: 1rem 0.5rem;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+.registerMessage{
+    margin-top: 30px;
+    font-size: 1rem;
+}
+.registerSigninButton{
+    /* position: absolute; */
+    /* top: 60px; */
+    /* right: 20px; */
+    margin-top: 20px;
+    background-color: lightcoral;
+    cursor: pointer;
+    padding: 1rem 5.5rem;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
