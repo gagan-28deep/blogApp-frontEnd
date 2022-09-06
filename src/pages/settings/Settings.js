@@ -86,7 +86,7 @@ const Settings = () => {
     e.preventDefault();
     try {
       let res = await axios.delete(
-        "https://blogapp-backend18.herokuapp.com/api/v1/user" + user.user._id,
+        "https://blogapp-backend18.herokuapp.com/api/v1/user/" + user.user._id,
         {
           data: { userId: user.user._id },
         }
@@ -115,7 +115,7 @@ const Settings = () => {
     let userE = user.user.email;
     try {
       let res = await axios.put(
-        "https://blogapp-backend18.herokuapp.com/api/v1/user" + user.user._id,
+        "https://blogapp-backend18.herokuapp.com/api/v1/user/" + user.user._id,
         {
           userId: user.user._id,
           username,
