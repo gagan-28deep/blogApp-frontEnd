@@ -15,7 +15,7 @@ export const ResetPassword = () => {
     // console.log("Request to backend from reset page");
     try {
       e.preventDefault();
-      let res = await axios.patch("/api/v1/auth/resetPassword", {
+      let res = await axios.patch("https://blogapp-backend18.herokuapp.com/api/v1/auth/resetPassword", {
         email,
         otp,
         password,

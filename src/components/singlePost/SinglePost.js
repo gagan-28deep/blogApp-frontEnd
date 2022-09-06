@@ -28,7 +28,7 @@ const SinglePost = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const { data } = await axios.get("/api/v1/post/" + path);
+      const { data } = await axios.get("https://blogapp-backend18.herokuapp.com/api/v1/post" + path);
       console.log("data is 32 ", data);
       setPost(data);
       setTitle(data.title);
@@ -43,9 +43,12 @@ const SinglePost = () => {
     console.log("Delete category");
     console.log("Post", post._id);
     axios
-      .delete(`/api/v1/post/${post._id}`, {
-        data: { username: user?.user?.username },
-      })
+      .delete(
+        `https://blogapp-backend18.herokuapp.com/api/v1/post${post._id}`,
+        {
+          data: { username: user?.user?.username },
+        }
+      )
       .then((res) => {
         toast.success("Post deleted successfully");
         window.location.href = "/";
@@ -56,7 +59,7 @@ const SinglePost = () => {
   };
   const handleUpdate = () => {
     axios
-      .put(`/api/v1/post/${post._id}`, {
+      .put(`https://blogapp-backend18.herokuapp.com/api/v1/post${post._id}`, {
         username: user?.user?.username,
         title,
         description,

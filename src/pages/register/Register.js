@@ -18,7 +18,7 @@ const Register = () => {
     try {
       setLoading(true);
       // console.log("sending request to backend");
-      let res = await axios.post("/api/v1/auth/register", {
+      let res = await axios.post("https://blogapp-backend18.herokuapp.com/api/v1/auth/register", {
         username,
         email,
         password,

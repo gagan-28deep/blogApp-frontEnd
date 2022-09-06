@@ -85,9 +85,12 @@ const Settings = () => {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      let res = await axios.delete("/api/v1/user/" + user.user._id, {
-        data: { userId: user.user._id },
-      });
+      let res = await axios.delete(
+        "https://blogapp-backend18.herokuapp.com/api/v1/user" + user.user._id,
+        {
+          data: { userId: user.user._id },
+        }
+      );
       console.log(res);
       if (res.status == 200) {
         toast.success("Account Deleted Successfully");
@@ -111,13 +114,16 @@ const Settings = () => {
     let userN = user.user.username;
     let userE = user.user.email;
     try {
-      let res = await axios.put("/api/v1/user/" + user.user._id, {
-        userId: user.user._id,
-        username,
-        email,
-        password,
-        profilePic: uploadFile ? uploadFile.name : user.profilePic,
-      });
+      let res = await axios.put(
+        "https://blogapp-backend18.herokuapp.com/api/v1/user" + user.user._id,
+        {
+          userId: user.user._id,
+          username,
+          email,
+          password,
+          profilePic: uploadFile ? uploadFile.name : user.profilePic,
+        }
+      );
       console.log("settings", res.data);
       if (uploadFile) {
         try {

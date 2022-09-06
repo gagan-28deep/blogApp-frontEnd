@@ -25,7 +25,7 @@ const Write = () => {
       // console.log("Request to server from Write page", user);
       // console.log("data", newData);
 
-      let res = await axios.post("/api/v1/post", {
+      let res = await axios.post("https://blogapp-backend18.herokuapp.com/api/v1/post", {
         username: user?.user.username,
         title,
         description,

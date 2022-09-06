@@ -18,7 +18,7 @@ const ForgotPassword = () => {
     // console.log("user", user);
     // console.log("Email: ", user?.email);
     try {
-      let res = await axios.patch("/api/v1/auth/forgotPassword", { email });
+      let res = await axios.patch("https://blogapp-backend18.herokuapp.com/api/v1/auth/forgotPassword", { email });
       if (res.status == 204) {
         toast.success("OTP sent successfully");
         navigate("/resetPassword");

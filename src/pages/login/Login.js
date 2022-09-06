@@ -18,15 +18,18 @@ const Login = () => {
     console.log("Login page sending request to backend");
     try {
       setLoading(true);
-      let res = await axios.post("/api/v1/auth/login", {
-        username,
-        password,
-      });
+      let res = await axios.post(
+        "https://blogapp-backend18.herokuapp.com/api/v1/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       // console.log("Login user", res);
       if (res.status == 200) {
         toast.success("Login Successful");
       }
-      console.log("Login user", res.data);
+      // console.log("Login user", res);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       setLoading(false);
       // console.log("Login user", res.data);
