@@ -8,7 +8,8 @@ import { toast } from "react-toastify";
 const SinglePost = () => {
   const { user, dispatch } = useContext(Context);
   // const pp = "http://localhost:4001/images/";
-  const pp = "/images/";
+  // const pp = "/images/";
+  const pp = "https://blogapp-backend18.herokuapp.com/images/";
 
   // console.log("single " , user)
 
@@ -28,7 +29,9 @@ const SinglePost = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const { data } = await axios.get("https://blogapp-backend18.herokuapp.com/api/v1/post/" + path);
+      const { data } = await axios.get(
+        "https://blogapp-backend18.herokuapp.com/api/v1/post/" + path
+      );
       console.log("data is 32 ", data);
       setPost(data);
       setTitle(data.title);

@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 
 const Settings = () => {
   // const PF = "http://localhost:4001/images/";
-  const PF = "/images/";
+  // const PF = "/images/";
+  const PF = "https://blogapp-backend18.herokuapp.com/images/";
   const { user, dispatch } = useContext(Context);
 
   const navigate = useNavigate();

@@ -3,7 +3,8 @@ import { Context } from "../../context/Context";
 import "./topbar.css";
 import { Link } from "react-router-dom";
 // const PP = "http://localhost:4001/images"
-const PP = "/images/";
+// const PP = "/images/";
+const PP = "https://blogapp-backend18.herokuapp.com/images/";
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
