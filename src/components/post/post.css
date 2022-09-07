@@ -1,15 +1,15 @@
 .post{
-    width: 385px;
-    margin: 0px 25px 40px 25px;
+    width: 25rem;
+    margin: 0rem 5rem 5rem 1.5rem;
     display: flex;
     flex-direction: column;
 }
 
 .postImg{
-    width: 385px;
-    height: 280px;
+    width: 25rem;
+    height: 20rem;
     object-fit: cover;
-    border-radius: 7px;
+    border-radius: 1rem;
 }
 .postInfo{
     display: flex;
@@ -18,33 +18,43 @@
 }
 .postCat{
     font-weight: 400;
-    font-size: 11px;
-    line-height: 19px;
-    margin-right: 10px;
-    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
 }
 
 .postTitle{
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 900;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 .postDate{
     font-style: italic;
-    font-size: 13px;
-    margin-top: 15px;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 .postDesc{
     font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-top: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical ;
+}
+
+@media screen and (max-width : 500px) {
+    .post{
+        width: 25rem;
+        margin: 0rem 1rem 5rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

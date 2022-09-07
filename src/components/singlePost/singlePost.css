@@ -2,14 +2,14 @@
     flex: 9;
 }
 .singlePostWrapper{
-    padding: 20px;
+    padding: 2rem;
     padding-right: 0;
 }
 .singlePostImg{
     width: 50vw;
     height: 50vh;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
 .singlePostTitle{
     text-align: center;
@@ -21,7 +21,7 @@
     font-size: 1.5rem;
 }
 .singlePostIcon{
-    margin-left: 10px;
+    margin-left: 1rem;
     cursor: pointer;
 }
 .singlePostIcon:first-child{
@@ -31,20 +31,20 @@
     color: tomato;
 }
 .singlePostInfo{
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
 }
 .singlePostAuthor{
-    margin-left: 5px;
+    margin-left: 0.5rem;
 }
 .singlePostDesc{
     font-size: 1.2rem;
     line-height: 2rem;
 }
 .singlePostDesc::first-letter{
-    margin-left: 20px;
+    margin-left: 1rem;
     font-size: 3rem;
     font-weight: 600;
 }
@@ -64,4 +64,31 @@
 }
 .singlePostDescInput:focus{
     outline: none;
+}
+
+@media screen and (max-width : 500px) {
+    .singlePostImg{
+        width: 70vw;
+        height: 50vh;
+        object-fit: cover;
+        border-radius: 1rem;
+    }    
+    .singlePostTitle{
+        text-align: center;
+        margin: 0.5rem;
+        font-size: 2rem;
+    }
+    .singlePostInfo{
+        margin-bottom: 1rem;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+    }
+    .singlePostDesc{
+        margin-top: 2rem;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    
 }

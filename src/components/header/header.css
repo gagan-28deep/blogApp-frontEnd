@@ -1,5 +1,5 @@
 .header{
-    margin-top: 60px;
+    margin-top: 0rem;
 }
 .headerTitles{
     display: flex;
@@ -11,19 +11,29 @@
 .headerTitleSm{
     position: absolute;
     top: 18%;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .headerTitleLg{
     position: absolute;
     top: 22%;
-    font-size: 70px;
+    font-size: 5rem;
     color: #010101;
+    padding: 1rem;
 }
 
 .headerImg{
     width: 100%;
-    height: 450px;
-    margin-top: 80px;
+    height: 25rem;
+    margin-top: 2rem;
     object-fit: cover;
+}
+
+@media screen and (max-width : 500px) {
+    .headerImg{
+        width: 100%;
+        height: 40rem;
+        object-fit: cover;
+        margin-top: 2rem;
+    }
 }
