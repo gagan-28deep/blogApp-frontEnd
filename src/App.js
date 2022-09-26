@@ -1,5 +1,6 @@
 import Header from "./components/header/Header";
 import Topbar from "./components/topbar/Topbar";
+
 import Home from "./pages/home/Home";
 import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
@@ -13,6 +14,7 @@ import { useContext } from "react";
 import { Context } from "./context/Context";
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const {user} = useContext(Context);
@@ -20,6 +22,7 @@ function App() {
     <Router>
       <ToastContainer/>
       <Topbar />
+      {/* <Navbar/> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={user ? <Home /> : <Login />} />

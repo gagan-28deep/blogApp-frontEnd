@@ -76,7 +76,6 @@ const Topbar = () => {
             className="topImg"
           />
         </Link>
-        {/* <i className="topSearchIcon fa-solid fa-search"></i> */}
       </div>
     </div>
   );

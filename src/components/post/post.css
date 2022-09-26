@@ -52,7 +52,8 @@
 @media screen and (max-width : 500px) {
     .post{
         width: 25rem;
-        margin: 0rem 1rem 5rem 1rem;
+        /* margin: 0rem 1rem 5rem 1rem; */
+        margin: auto;
         display: flex;
         flex-direction: column;
     }
