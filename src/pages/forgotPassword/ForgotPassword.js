@@ -27,7 +27,10 @@ const ForgotPassword = () => {
     } catch (err) {
       if (err.message == "Request failed with status code 404") {
         toast.error("Email not found");
-      } else if (err.message == "Request failed with status code 500") {
+      }else if(err.message == "Request failed with status code 401"){
+        toast.error("Please Enter Email Id")
+      } 
+      else if (err.message == "Request failed with status code 500") {
         toast.error("Internal Server Error");
       }
       console.log(err.message);

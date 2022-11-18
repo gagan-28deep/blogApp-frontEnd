@@ -30,7 +30,10 @@ export const ResetPassword = () => {
     } catch (err) {
       if (err.message == "Request failed with status code 404") {
         toast.error("Wrong Otp Entered");
-      } else if (err.message == "Request failed with status code 400") {
+      }else if(err.message == "Request failed with status code 401"){
+        toast.error("Please fill all the fields");
+      } 
+      else if (err.message == "Request failed with status code 400") {
         toast.error("Your otp is expired");
       } else if (err.message == "Request failed with status code 500") {
         toast.error("Internal Server Error");
