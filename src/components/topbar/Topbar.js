@@ -68,7 +68,8 @@ const Topbar = () => {
           )}
         </ul>
       </div>
-      <div className="topRight">
+      {
+        user?(<div className="topRight">
         <Link to="/settings">
           <img
             src={PP + user?.user?.profilePic}
@@ -76,7 +77,17 @@ const Topbar = () => {
             className="topImg"
           />
         </Link>
-      </div>
+      </div>) : ("")
+      }
+      {/* <div className="topRight">
+        <Link to="/settings">
+          <img
+            src={PP + user?.user?.profilePic}
+            alt="Profile Pic"
+            className="topImg"
+          />
+        </Link>
+      </div> */}
     </div>
   );
 };
