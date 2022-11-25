@@ -4,7 +4,7 @@ import "./topbar.css";
 import { Link } from "react-router-dom";
 // const PP = "http://localhost:4001/images"
 // const PP = "/images/";
-const PP = "https://blogapp-backend18.herokuapp.com/images/";
+const PP = "https://node-api-vzfv.onrender.com/images/";
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
@@ -68,17 +68,19 @@ const Topbar = () => {
           )}
         </ul>
       </div>
-      {
-        user?(<div className="topRight">
-        <Link to="/settings">
-          <img
-            src={PP + user?.user?.profilePic}
-            alt="Profile Pic"
-            className="topImg"
-          />
-        </Link>
-      </div>) : ("")
-      }
+      {user ? (
+        <div className="topRight">
+          <Link to="/settings">
+            <img
+              src={PP + user?.user?.profilePic}
+              alt="Profile Pic"
+              className="topImg"
+            />
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
       {/* <div className="topRight">
         <Link to="/settings">
           <img

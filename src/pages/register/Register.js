@@ -15,22 +15,25 @@ const Register = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       // console.log("sending request to backend");
-      let res = await axios.post("https://blogapp-backend18.herokuapp.com/api/v1/auth/register", {
-        username,
-        email,
-        password,
-        confirmPassword,
-      });
+      let res = await axios.post(
+        "https://node-api-vzfv.onrender.com/api/v1/auth/register",
+        {
+          username,
+          email,
+          password,
+          confirmPassword,
+        }
+      );
       // console.log("Reg user", res);
       if (res.status == 201) {
         toast.success("Registered Successfully");
-        navigate("/login")
+        navigate("/login");
       }
       // res.data && window.location.replace("/login");
       setLoading(false);

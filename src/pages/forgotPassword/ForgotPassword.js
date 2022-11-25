@@ -18,7 +18,10 @@ const ForgotPassword = () => {
     // console.log("user", user);
     // console.log("Email: ", user?.email);
     try {
-      let res = await axios.patch("https://blogapp-backend18.herokuapp.com/api/v1/auth/forgotPassword", { email } );
+      let res = await axios.patch(
+        "https://node-api-vzfv.onrender.com/api/v1/auth/forgotPassword",
+        { email }
+      );
       if (res.status == 204) {
         toast.success("OTP sent successfully");
         navigate("/resetPassword");
@@ -27,10 +30,9 @@ const ForgotPassword = () => {
     } catch (err) {
       if (err.message == "Request failed with status code 404") {
         toast.error("Email not found");
-      }else if(err.message == "Request failed with status code 401"){
-        toast.error("Please Enter Email Id")
-      } 
-      else if (err.message == "Request failed with status code 500") {
+      } else if (err.message == "Request failed with status code 401") {
+        toast.error("Please Enter Email Id");
+      } else if (err.message == "Request failed with status code 500") {
         toast.error("Internal Server Error");
       }
       console.log(err.message);

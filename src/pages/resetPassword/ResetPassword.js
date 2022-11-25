@@ -15,12 +15,15 @@ export const ResetPassword = () => {
     // console.log("Request to backend from reset page");
     try {
       e.preventDefault();
-      let res = await axios.patch("https://blogapp-backend18.herokuapp.com/api/v1/auth/resetPassword", {
-        email,
-        otp,
-        password,
-        confirmPassword,
-      });
+      let res = await axios.patch(
+        "https://node-api-vzfv.onrender.com/api/v1/auth/resetPassword",
+        {
+          email,
+          otp,
+          password,
+          confirmPassword,
+        }
+      );
       if (res.status == 201) {
         toast.success(
           "Password reset successfully , Please Login with new password"
@@ -30,10 +33,9 @@ export const ResetPassword = () => {
     } catch (err) {
       if (err.message == "Request failed with status code 404") {
         toast.error("Wrong Otp Entered");
-      }else if(err.message == "Request failed with status code 401"){
+      } else if (err.message == "Request failed with status code 401") {
         toast.error("Please fill all the fields");
-      } 
-      else if (err.message == "Request failed with status code 400") {
+      } else if (err.message == "Request failed with status code 400") {
         toast.error("Your otp is expired");
       } else if (err.message == "Request failed with status code 500") {
         toast.error("Internal Server Error");

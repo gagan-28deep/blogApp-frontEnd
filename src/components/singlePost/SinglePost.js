@@ -9,7 +9,7 @@ const SinglePost = () => {
   const { user, dispatch } = useContext(Context);
   // const pp = "http://localhost:4001/images/";
   // const pp = "/images/";
-  const pp = "https://blogapp-backend18.herokuapp.com/images/";
+  const pp = "https://node-api-vzfv.onrender.com/images/";
 
   // console.log("single " , user)
 
@@ -30,7 +30,7 @@ const SinglePost = () => {
   useEffect(() => {
     const getPost = async () => {
       const { data } = await axios.get(
-        "https://blogapp-backend18.herokuapp.com/api/v1/post/" + path
+        "https://node-api-vzfv.onrender.com/api/v1/post/" + path
       );
       console.log("data is 32 ", data);
       setPost(data);
@@ -46,12 +46,9 @@ const SinglePost = () => {
     console.log("Delete category");
     console.log("Post", post._id);
     axios
-      .delete(
-        `https://blogapp-backend18.herokuapp.com/api/v1/post/${post._id}`,
-        {
-          data: { username: user?.user?.username },
-        }
-      )
+      .delete(`https://node-api-vzfv.onrender.com/api/v1/post/${post._id}`, {
+        data: { username: user?.user?.username },
+      })
       .then((res) => {
         toast.success("Post deleted successfully");
         window.location.href = "/";
@@ -62,7 +59,7 @@ const SinglePost = () => {
   };
   const handleUpdate = () => {
     axios
-      .put(`https://blogapp-backend18.herokuapp.com/api/v1/post/${post._id}`, {
+      .put(`https://node-api-vzfv.onrender.com/api/v1/post/${post._id}`, {
         username: user?.user?.username,
         title,
         description,

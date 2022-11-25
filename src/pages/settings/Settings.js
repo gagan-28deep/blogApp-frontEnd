@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const Settings = () => {
   // const PF = "http://localhost:4001/images/";
   // const PF = "/images/";
-  const PF = "https://blogapp-backend18.herokuapp.com/images/";
+  const PF = "https://node-api-vzfv.onrender.com/images/";
   const { user, dispatch } = useContext(Context);
 
   const navigate = useNavigate();
@@ -87,7 +87,7 @@ const Settings = () => {
     e.preventDefault();
     try {
       let res = await axios.delete(
-        "https://blogapp-backend18.herokuapp.com/api/v1/user/" + user.user._id,
+        "https://node-api-vzfv.onrender.com/api/v1/user/" + user.user._id,
         {
           data: { userId: user.user._id },
         }
@@ -116,7 +116,7 @@ const Settings = () => {
     let userE = user.user.email;
     try {
       let res = await axios.put(
-        "https://blogapp-backend18.herokuapp.com/api/v1/user/" + user.user._id,
+        "https://node-api-vzfv.onrender.com/api/v1/user/" + user.user._id,
         {
           userId: user.user._id,
           username,
@@ -135,10 +135,7 @@ const Settings = () => {
           data.append("name", fileName);
           data.append("uploadFile", uploadFile);
           res.profilePic = fileName;
-          axios.post(
-            "https://blogapp-backend18.herokuapp.com/api/v1/upload",
-            data
-          );
+          axios.post("https://node-api-vzfv.onrender.com/api/v1/upload", data);
           // res = await axios.post("/api/v1/upload", data);
           // console.log("res11", res);
           if (res.status === 200) {

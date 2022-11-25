@@ -19,7 +19,7 @@ const Login = () => {
     try {
       setLoading(true);
       let res = await axios.post(
-        "https://blogapp-backend18.herokuapp.com/api/v1/auth/login",
+        "https://node-api-vzfv.onrender.com/api/v1/auth/login",
         {
           username,
           password,

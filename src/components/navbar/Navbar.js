@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../../context/Context";
 import { Link } from "react-router-dom";
-const PP = "https://blogapp-backend18.herokuapp.com/images/";
+const PP = "https://node-api-vzfv.onrender.com/images/";
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
   const handleLogout = () => {

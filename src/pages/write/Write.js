@@ -26,7 +26,7 @@ const Write = () => {
       // console.log("data", newData);
 
       let res = await axios.post(
-        "https://blogapp-backend18.herokuapp.com/api/v1/post",
+        "https://node-api-vzfv.onrender.com/api/v1/post",
         {
           username: user?.user.username,
           title,
@@ -44,10 +44,7 @@ const Write = () => {
           data.append("uploadFile", uploadFile);
           res.photo = fileName;
           // const uploadRes=await axios.post("/api/v1/upload", data);
-          axios.post(
-            "https://blogapp-backend18.herokuapp.com/api/v1/upload",
-            data
-          );
+          axios.post("https://node-api-vzfv.onrender.com/api/v1/upload", data);
           if (res.status === 200) {
             toast.success("Uploaded successfully");
             console.log("res 46", res.data);

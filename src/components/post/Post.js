@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Post = ({ post }) => {
   // const pp = "http://localhost:4001/images/";
   // const pp = "/images/";
-  const pp = "https://blogapp-backend18.herokuapp.com/images/";
+  const pp = "https://node-api-vzfv.onrender.com/images/";
   // console.log(post);
   return (
     <div className="post">

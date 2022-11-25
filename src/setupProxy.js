@@ -5,7 +5,7 @@ module.exports = function (app) {
     "/api",
     createProxyMiddleware({
       // server ke home page ka link
-      target: "https://blogapp-backend18.herokuapp.com/",
+      target: "https://node-api-vzfv.onrender.com/",
       // target : "http://localhost:4000",
       changeOrigin: true,
     })
