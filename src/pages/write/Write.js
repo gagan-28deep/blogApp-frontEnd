@@ -139,24 +139,31 @@ const Write = () => {
         />
       )}
       <form action="" className="writeForm" onSubmit={handleSubmit}>
+        <div>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <i className="writeIcon far fa-plus"></i>
           </label>
-          <input
+          <input 
             id="fileInput"
             type="file"
             onChange={(e) => setuploadFile(e.target.files[0])}
             style={{ display: "none" }}
           />
+          
+        
           <input
-            className="writeInput"
+            className="writeInput "
             placeholder="Title"
             type="text"
             autoFocus={true}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
+           <button className="writeSubmit" type="submit" >
+          Publish
+        </button>
+          </div>
         </div>
         <div className="writeFormGroup">
           <textarea
@@ -168,9 +175,7 @@ const Write = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <button className="writeSubmit" type="submit">
-          Publish
-        </button>
+       
       </form>
     </div>
   );
