@@ -83,3 +83,10 @@
 .settingsSubmit:hover{
     background-color: rgb(1, 114, 114);
 }
+
+@media screen and (max-width : 500px) {
+    .settingsTitleDelete{
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+    }
+}

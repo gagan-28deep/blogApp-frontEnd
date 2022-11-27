@@ -6,8 +6,8 @@
     padding-right: 0;
 }
 .singlePostImg{
-    width: 50vw;
-    height: 50vh;
+    width: 30%;
+    height: 30%;
     object-fit: cover;
     border-radius: 1rem;
 }
@@ -68,8 +68,8 @@
 
 @media screen and (max-width : 500px) {
     .singlePostImg{
-        width: 70vw;
-        height: 50vh;
+        width: 80%;
+        height: 80%;
         object-fit: cover;
         border-radius: 1rem;
     }    
