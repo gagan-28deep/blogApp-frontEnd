@@ -4,7 +4,7 @@ import "./topbar.css";
 import { Link } from "react-router-dom";
 // const PP = "http://localhost:4001/images"
 // const PP = "/images/";
-const PP = "https://node-api-vzfv.onrender.com/images/";
+const PP = "https://node-backend-pe6s.onrender.com/images/";
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);

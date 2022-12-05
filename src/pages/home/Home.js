@@ -15,7 +15,7 @@ const Home = () => {
     const fetchPosts = async () => {
       // const res = await axios.get("http://localhost:4000/api/v1/post/posts");
       const { data } = await axios.get(
-        "https://node-api-vzfv.onrender.com/api/v1/post/posts" + search
+        "https://node-backend-pe6s.onrender.com/api/v1/post/posts" + search
       );
       // console.log(data);
       setPosts(data);

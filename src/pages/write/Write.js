@@ -26,7 +26,7 @@ const Write = () => {
       // console.log("data", newData);
 
       let res = await axios.post(
-        "https://node-api-vzfv.onrender.com/api/v1/post",
+        "https://node-backend-pe6s.onrender.com/api/v1/post",
         {
           username: user?.user.username,
           title,
@@ -44,7 +44,10 @@ const Write = () => {
           data.append("uploadFile", uploadFile);
           res.photo = fileName;
           // const uploadRes=await axios.post("/api/v1/upload", data);
-          axios.post("https://node-api-vzfv.onrender.com/api/v1/upload", data);
+          axios.post(
+            "https://node-backend-pe6s.onrender.com/api/v1/upload",
+            data
+          );
           if (res.status === 200) {
             toast.success("Uploaded successfully");
             console.log("res 46", res.data);
@@ -140,29 +143,28 @@ const Write = () => {
       )}
       <form action="" className="writeForm" onSubmit={handleSubmit}>
         <div>
-        <div className="writeFormGroup">
-          <label htmlFor="fileInput">
-            <i className="writeIcon far fa-plus"></i>
-          </label>
-          <input 
-            id="fileInput"
-            type="file"
-            onChange={(e) => setuploadFile(e.target.files[0])}
-            style={{ display: "none" }}
-          />
-          
-        
-          <input
-            className="writeInput "
-            placeholder="Title"
-            type="text"
-            autoFocus={true}
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-           <button className="writeSubmit" type="submit" >
-          Publish
-        </button>
+          <div className="writeFormGroup">
+            <label htmlFor="fileInput">
+              <i className="writeIcon far fa-plus"></i>
+            </label>
+            <input
+              id="fileInput"
+              type="file"
+              onChange={(e) => setuploadFile(e.target.files[0])}
+              style={{ display: "none" }}
+            />
+
+            <input
+              className="writeInput "
+              placeholder="Title"
+              type="text"
+              autoFocus={true}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <button className="writeSubmit" type="submit">
+              Publish
+            </button>
           </div>
         </div>
         <div className="writeFormGroup">
@@ -175,7 +177,6 @@ const Write = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-       
       </form>
     </div>
   );

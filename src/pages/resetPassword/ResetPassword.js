@@ -16,7 +16,7 @@ export const ResetPassword = () => {
     try {
       e.preventDefault();
       let res = await axios.patch(
-        "https://node-api-vzfv.onrender.com/api/v1/auth/resetPassword",
+        "https://node-backend-pe6s.onrender.com/api/v1/auth/resetPassword",
         {
           email,
           otp,

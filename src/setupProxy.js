@@ -5,7 +5,7 @@ module.exports = function (app) {
     "/api",
     createProxyMiddleware({
       // server ke home page ka link
-      target: "https://node-api-vzfv.onrender.com/",
+      target: "https://node-backend-pe6s.onrender.com/",
       // target : "http://localhost:4000",
       changeOrigin: true,
     })

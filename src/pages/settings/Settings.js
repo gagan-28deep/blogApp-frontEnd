@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const Settings = () => {
   // const PF = "http://localhost:4001/images/";
   // const PF = "/images/";
-  const PF = "https://node-api-vzfv.onrender.com/images/";
+  const PF = "https://node-backend-pe6s.onrender.com/images/";
   const { user, dispatch } = useContext(Context);
 
   const navigate = useNavigate();
@@ -81,13 +81,14 @@ const Settings = () => {
   //     });
   // };
 
-  console.log("User", user.user._id);
+  // console.log("User", user.user._id);
+  // console.log("USerPic", user.user);
 
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
       let res = await axios.delete(
-        "https://node-api-vzfv.onrender.com/api/v1/user/" + user.user._id,
+        "https://node-backend-pe6s.onrender.com/api/v1/user/" + user.user._id,
         {
           data: { userId: user.user._id },
         }
@@ -116,7 +117,7 @@ const Settings = () => {
     let userE = user.user.email;
     try {
       let res = await axios.put(
-        "https://node-api-vzfv.onrender.com/api/v1/user/" + user.user._id,
+        "https://node-backend-pe6s.onrender.com/api/v1/user/" + user.user._id,
         {
           userId: user.user._id,
           username,
@@ -135,7 +136,10 @@ const Settings = () => {
           data.append("name", fileName);
           data.append("uploadFile", uploadFile);
           res.profilePic = fileName;
-          axios.post("https://node-api-vzfv.onrender.com/api/v1/upload", data);
+          axios.post(
+            "https://node-backend-pe6s.onrender.com/api/v1/upload",
+            data
+          );
           // res = await axios.post("/api/v1/upload", data);
           // console.log("res11", res);
           if (res.status === 200) {
