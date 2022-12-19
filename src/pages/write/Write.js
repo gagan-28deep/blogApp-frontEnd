@@ -26,7 +26,7 @@ const Write = () => {
       // console.log("data", newData);
 
       let res = await axios.post(
-        "https://node-backend-pe6s.onrender.com/api/v1/post",
+        "https://blogapp-backend-production-b278.up.railway.app/api/v1/post",
         {
           username: user?.user.username,
           title,
@@ -45,7 +45,7 @@ const Write = () => {
           res.photo = fileName;
           // const uploadRes=await axios.post("/api/v1/upload", data);
           axios.post(
-            "https://node-backend-pe6s.onrender.com/api/v1/upload",
+            "https://blogapp-backend-production-b278.up.railway.app/api/v1/upload",
             data
           );
           if (res.status === 200) {

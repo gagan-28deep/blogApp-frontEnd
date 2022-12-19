@@ -9,7 +9,7 @@ const SinglePost = () => {
   const { user, dispatch } = useContext(Context);
   // const pp = "http://localhost:4001/images/";
   // const pp = "/images/";
-  const pp = "https://node-backend-pe6s.onrender.com/images/";
+  const pp = "https://blogapp-backend-production-b278.up.railway.app/images/";
 
   // console.log("single " , user)
 
@@ -30,7 +30,8 @@ const SinglePost = () => {
   useEffect(() => {
     const getPost = async () => {
       const { data } = await axios.get(
-        "https://node-backend-pe6s.onrender.com/api/v1/post/" + path
+        "https://blogapp-backend-production-b278.up.railway.app/api/v1/post/" +
+          path
       );
       console.log("data is 32 ", data);
       setPost(data);
@@ -47,7 +48,7 @@ const SinglePost = () => {
     console.log("Post", post._id);
     axios
       .delete(
-        `https://node-backend-pe6s.onrender.com/api/v1/post/${post._id}`,
+        `https://blogapp-backend-production-b278.up.railway.app/api/v1/post/${post._id}`,
         {
           data: { username: user?.user?.username },
         }
@@ -62,11 +63,14 @@ const SinglePost = () => {
   };
   const handleUpdate = () => {
     axios
-      .put(`https://node-backend-pe6s.onrender.com/api/v1/post/${post._id}`, {
-        username: user?.user?.username,
-        title,
-        description,
-      })
+      .put(
+        `https://blogapp-backend-production-b278.up.railway.app/api/v1/post/${post._id}`,
+        {
+          username: user?.user?.username,
+          title,
+          description,
+        }
+      )
       .then((res) => {
         toast.success("Post updated successfully");
         setUpdateMode(false);

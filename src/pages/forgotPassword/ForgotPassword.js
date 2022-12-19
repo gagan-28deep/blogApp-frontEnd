@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     // console.log("Email: ", user?.email);
     try {
       let res = await axios.patch(
-        "https://node-backend-pe6s.onrender.com/api/v1/auth/forgotPassword",
+        "https://blogapp-backend-production-b278.up.railway.app/api/v1/auth/forgotPassword",
         { email }
       );
       if (res.status == 204) {

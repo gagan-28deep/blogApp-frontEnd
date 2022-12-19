@@ -19,7 +19,7 @@ const Login = () => {
     try {
       setLoading(true);
       let res = await axios.post(
-        "https://node-backend-pe6s.onrender.com/api/v1/auth/login",
+        "https://blogapp-backend-production-b278.up.railway.app/api/v1/auth/login",
         {
           username,
           password,

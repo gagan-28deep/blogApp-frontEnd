@@ -22,7 +22,7 @@ const Register = () => {
       setLoading(true);
       // console.log("sending request to backend");
       let res = await axios.post(
-        "https://node-backend-pe6s.onrender.com/api/v1/auth/register",
+        "https://blogapp-backend-production-b278.up.railway.app/api/v1/auth/register",
         {
           username,
           email,
