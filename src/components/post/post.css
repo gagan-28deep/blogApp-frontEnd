@@ -57,5 +57,10 @@
         display: flex;
         flex-direction: column;
     }
-    
+    .postImg{
+        margin-left: 1.7rem;
+        width: 20rem;
+        height: 15rem;
+        object-fit: cover;
+    }
 }
