@@ -11,6 +11,11 @@ const Login = () => {
   const { user, dispatch, isFetching } = useContext(Context);
   const [loading, setLoading] = useState(false);
 
+  // Handle Login
+  const handleLogin = async () => {
+    let logButton = document.querySelector(".loginButton");
+    logButton.style.display = "none";
+  };
   const handleSubmit = async (e) => {
     // let flag = true;
     e.preventDefault();
@@ -34,6 +39,10 @@ const Login = () => {
       setLoading(false);
       // console.log("Login user", res.data);
     } catch (err) {
+      if (err) {
+        let logButton = document.querySelector(".loginButton");
+        logButton.style.display = "block";
+      }
       if (err.message == "Request failed with status code 404") {
         toast.error("Login Failed , User not found");
         // flag = false;
@@ -74,7 +83,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <button className="loginButton" type="submit">
+        <button className="loginButton" type="submit" onClick={handleLogin}>
           Login
         </button>
         {/* <Link to="/forgotPassword">

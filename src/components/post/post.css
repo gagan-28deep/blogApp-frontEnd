@@ -63,4 +63,8 @@
         height: 15rem;
         object-fit: cover;
     }
+    .postDesc{
+        margin-left: 0.8rem;
+    }
+    
 }

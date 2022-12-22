@@ -16,6 +16,11 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  const handleRegister = async () => {
+    let regBtn = document.querySelector(".registerButton");
+    regBtn.style.display = "none";
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -39,6 +44,10 @@ const Register = () => {
       setLoading(false);
       // res.data && window.location.replace("/login");
     } catch (err) {
+      if (err) {
+        let regBtn = document.querySelector(".registerButton");
+        regBtn.style.display = "block";
+      }
       if (err.message == "Request failed with status code 400") {
         toast.error("Please fill all the fields", {
           type: "error",
@@ -97,7 +106,11 @@ const Register = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           value={confirmPassword}
         />
-        <button className="registerButton" type="submit">
+        <button
+          className="registerButton"
+          type="submit"
+          onClick={handleRegister}
+        >
           Register
         </button>
       </form>

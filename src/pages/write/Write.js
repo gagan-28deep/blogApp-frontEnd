@@ -13,6 +13,12 @@ const Write = () => {
   const [uploadFile, setuploadFile] = useState(null);
   const navigate = useNavigate();
 
+  // Handle Publish
+  const handlePublish = async () => {
+    const pubBtn = document.querySelector(".writeSubmit");
+    pubBtn.style.display = "none";
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -73,6 +79,10 @@ const Write = () => {
         navigate("/post/" + res.data.savedPost._id);
       }
     } catch (err) {
+      if (err) {
+        const pubBtn = document.querySelector(".writeSubmit");
+        pubBtn.style.display = "block";
+      }
       if (err.message == "Request failed with status code 500") {
         toast.error("Internal Server error");
       } else if (err.message == "Request failed with status code 400") {
@@ -162,7 +172,11 @@ const Write = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-            <button className="writeSubmit" type="submit">
+            <button
+              className="writeSubmit"
+              type="submit"
+              onClick={handlePublish}
+            >
               Publish
             </button>
           </div>
