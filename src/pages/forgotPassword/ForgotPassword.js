@@ -12,8 +12,15 @@ const ForgotPassword = () => {
 
   const navigate = useNavigate();
 
+  // const handleForgot = async ()=>{
+  //   let forBtn = document.querySelector(".forgotButton")
+  //   forBtn.style.display = "none"
+  // }
+
   const sendEmail = async (e) => {
     e.preventDefault();
+    let forBtn = document.querySelector(".forgotButton");
+    forBtn.style.display = "none";
     // console.log("Request to backend from forgot password");
     // console.log("user", user);
     // console.log("Email: ", user?.email);
@@ -28,6 +35,10 @@ const ForgotPassword = () => {
       }
       // console.log("Email again " , email);
     } catch (err) {
+      if (err) {
+        let forBtn = document.querySelector(".forgotButton");
+        forBtn.style.display = "block";
+      }
       if (err.message == "Request failed with status code 404") {
         toast.error("Email not found");
       } else if (err.message == "Request failed with status code 401") {
