@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../../context/Context";
 import { Link } from "react-router-dom";
-const PP = "https://blogapp-backend-production-b278.up.railway.app/images/";
+const PP = "https://blogapp-backend-production-63c0.up.railway.app/images/";
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
   const handleLogout = () => {

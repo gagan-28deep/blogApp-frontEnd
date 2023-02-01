@@ -16,7 +16,7 @@ export const ResetPassword = () => {
     try {
       e.preventDefault();
       let res = await axios.patch(
-        "https://blogapp-backend-production-b278.up.railway.app/api/v1/auth/resetPassword",
+        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/auth/resetPassword",
         {
           email,
           otp,

@@ -4,7 +4,7 @@ import "./topbar.css";
 import { Link } from "react-router-dom";
 // const PP = "http://localhost:4001/images"
 // const PP = "/images/";
-const PP = "https://blogapp-backend-production-b278.up.railway.app/images/";
+const PP = "https://blogapp-backend-production-63c0.up.railway.app/images/";
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);

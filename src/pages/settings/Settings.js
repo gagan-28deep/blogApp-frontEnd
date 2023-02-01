@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const Settings = () => {
   // const PF = "http://localhost:4001/images/";
   // const PF = "/images/";
-  const PF = "https://blogapp-backend-production-b278.up.railway.app/images/";
+  const PF = "https://blogapp-backend-production-63c0.up.railway.app/images/";
   const { user, dispatch } = useContext(Context);
 
   const navigate = useNavigate();
@@ -88,7 +88,7 @@ const Settings = () => {
     e.preventDefault();
     try {
       let res = await axios.delete(
-        "https://blogapp-backend-production-b278.up.railway.app/api/v1/user/" +
+        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/user/" +
           user.user._id,
         {
           data: { userId: user.user._id },
@@ -118,7 +118,7 @@ const Settings = () => {
     let userE = user.user.email;
     try {
       let res = await axios.put(
-        "https://blogapp-backend-production-b278.up.railway.app/api/v1/user/" +
+        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/user/" +
           user.user._id,
         {
           userId: user.user._id,
@@ -139,7 +139,7 @@ const Settings = () => {
           data.append("uploadFile", uploadFile);
           res.profilePic = fileName;
           axios.post(
-            "https://blogapp-backend-production-b278.up.railway.app/api/v1/upload",
+            "https://blogapp-backend-production-63c0.up.railway.app/api/v1/upload",
             data
           );
           // res = await axios.post("/api/v1/upload", data);
