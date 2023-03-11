@@ -24,7 +24,7 @@ const Login = () => {
     try {
       setLoading(true);
       let res = await axios.post(
-        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/auth/login",
+        "https://blogapp-backend-production.up.railway.app/api/v1/auth/login",
         {
           username,
           password,

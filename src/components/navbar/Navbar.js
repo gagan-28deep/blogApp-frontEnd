@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../../context/Context";
 import { Link } from "react-router-dom";
-const PP = "https://blogapp-backend-production-63c0.up.railway.app/images/";
+const PP = "https://blogapp-backend-production.up.railway.app/images/";
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
   const handleLogout = () => {
@@ -81,3 +81,20 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+//    let res = await axios.get(api)
+//    let user = res.data
+
+// //  user : {
+//       fn : "gag"
+//       ln : "gag1"
+//       yn : "gag2"
+//       tn : "gag3"
+// }
+
+//    user.map((element)=>{
+// console.log(user?.ln   it is checking that the key is present or not if the property ln exists then go inside and bring value rlse return
+
+//  user && user.ln   it is checking that user exists or not(first)   if user exist -> then only get inside the "ln" key value);
+// console.log(user?.ln);
+// })

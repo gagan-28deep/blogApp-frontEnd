@@ -5,7 +5,7 @@ import Post from "../post/Post";
 const Posts = ({ posts }) => {
   // setInterval(async () => {
   //   const res = await fetch(
-  //     `https://blogapp-backend-production-63c0.up.railway.app/api/v1/hello`
+  //     `https://blogapp-backend-production.up.railway.app/api/v1/hello`
   //   );
   //   console.log("Hello");
   // }, 10000);

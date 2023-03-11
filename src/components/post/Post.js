@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Post = ({ post }) => {
   // const pp = "http://localhost:4001/images/";
   // const pp = "/images/";
-  const pp = "https://blogapp-backend-production-63c0.up.railway.app/images/";
+  const pp = "https://blogapp-backend-production.up.railway.app/images/";
   // console.log(post);
   return (
     <div className="post">

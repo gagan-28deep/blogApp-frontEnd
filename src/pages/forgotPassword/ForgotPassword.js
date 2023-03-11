@@ -26,7 +26,7 @@ const ForgotPassword = () => {
     // console.log("Email: ", user?.email);
     try {
       let res = await axios.patch(
-        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/auth/forgotPassword",
+        "https://blogapp-backend-production.up.railway.app/api/v1/auth/forgotPassword",
         { email }
       );
       if (res.status == 204) {

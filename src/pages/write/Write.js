@@ -32,7 +32,7 @@ const Write = () => {
       // console.log("data", newData);
 
       let res = await axios.post(
-        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/post",
+        "https://blogapp-backend-production.up.railway.app/api/v1/post",
         {
           username: user?.user.username,
           title,
@@ -51,7 +51,7 @@ const Write = () => {
           res.photo = fileName;
           // const uploadRes=await axios.post("/api/v1/upload", data);
           axios.post(
-            "https://blogapp-backend-production-63c0.up.railway.app/api/v1/upload",
+            "https://blogapp-backend-production.up.railway.app/api/v1/upload",
             data
           );
           if (res.status === 200) {

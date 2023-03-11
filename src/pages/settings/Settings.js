@@ -7,10 +7,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+// Firebase
+import { storage, database, storageRef, db } from "../../firebase";
+import { getDatabase, ref, set } from "firebase/database";
 const Settings = () => {
   // const PF = "http://localhost:4001/images/";
   // const PF = "/images/";
-  const PF = "https://blogapp-backend-production-63c0.up.railway.app/images/";
+  const PF = "https://blogapp-backend-production.up.railway.app/images/";
   const { user, dispatch } = useContext(Context);
 
   const navigate = useNavigate();
@@ -84,11 +87,16 @@ const Settings = () => {
   // console.log("User", user.user._id);
   // console.log("USerPic", user.user);
 
+  const handleUpload = (e) => {
+    let file = e?.target?.files[0];
+    if (file != null) setUploadFile(file);
+    // console.log(file)
+  };
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
       let res = await axios.delete(
-        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/user/" +
+        "https://blogapp-backend-production.up.railway.app/api/v1/user/" +
           user.user._id,
         {
           data: { userId: user.user._id },
@@ -118,7 +126,7 @@ const Settings = () => {
     let userE = user.user.email;
     try {
       let res = await axios.put(
-        "https://blogapp-backend-production-63c0.up.railway.app/api/v1/user/" +
+        "https://blogapp-backend-production.up.railway.app/api/v1/user/" +
           user.user._id,
         {
           userId: user.user._id,
@@ -131,6 +139,7 @@ const Settings = () => {
       console.log("settings", res.data);
       if (uploadFile) {
         try {
+          // let uid = user.user._id;
           const data = new FormData();
           console.log("data", data);
           const fileName = uploadFile.name;
@@ -138,10 +147,57 @@ const Settings = () => {
           data.append("name", fileName);
           data.append("uploadFile", uploadFile);
           res.profilePic = fileName;
+
+          // const uploadTask = storageRef(`/users/${uid}/ProfileImage`).put(
+          //   uploadFile
+          // );
+
+          // uploadTask.on(
+          //   "state_changed",
+          //   // progress
+          //   (snapshot) => {
+          //     // Observe state change events such as progress, pause, and resume
+          //     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          //     var progress =
+          //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          //   },
+          //   (error) => {
+          //     // Handle unsuccessful uploads
+          //     console.log("Failed to upload File");
+          //   },
+          //   //   success
+          //   () => {
+          //     uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+          //       //   console.log('File available at', downloadURL);
+          //       // database.users.doc(uid).set({
+          //       //   // email: email,
+          //       //   // userId: uid,
+          //       //   // fullName: fullName,
+          //       //   // createdAt: database.getCurrentTimeStamp(),
+          //       //   // profileUrl: downloadURL,
+          //       //   userId: user.user._id,
+          //       //   username,
+          //       //   email,
+          //       //   password,
+          //       //   profilePic: uploadFile ? uploadFile.name : user.profilePic,
+          //       // });
+          //       const db = getDatabase();
+          //       set(ref(db, "users/" + user.user.id), {
+          //         userId: user.user._id,
+          //         username,
+          //         email,
+          //         password,
+          //         profilePic: uploadFile ? uploadFile.name : user.profilePic,
+          //       });
+          //     });
+          //   }
+          // );
+
           axios.post(
-            "https://blogapp-backend-production-63c0.up.railway.app/api/v1/upload",
+            "https://blogapp-backend-production.up.railway.app/api/v1/upload",
             data
           );
+
           // res = await axios.post("/api/v1/upload", data);
           // console.log("res11", res);
           if (res.status === 200) {
@@ -191,8 +247,14 @@ const Settings = () => {
           <div className="settingsPP">
             {uploadFile ? (
               <>
-                {console.log("uploadfile", uploadFile)}
-                <img src={URL.createObjectURL(uploadFile)} alt="" />
+                {/* {console.log("uploadfile", uploadFile)}
+                <img src={URL.createObjectURL(uploadFile)} alt="" /> */}
+                <input
+                  accept="image/*"
+                  type="file"
+                  hidden
+                  onChange={(e) => handleUpload(e)}
+                />
               </>
             ) : (
               <img src={PF + user.user.profilePic} alt="" />
