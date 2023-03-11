@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 // Firebase
-import { storage, database, storageRef, db } from "../../firebase";
-import { getDatabase, ref, set } from "firebase/database";
+// import { storage, database, storageRef, db } from "../../firebase";
+// import { getDatabase, ref, set } from "firebase/database";
 const Settings = () => {
   // const PF = "http://localhost:4001/images/";
   // const PF = "/images/";
@@ -87,11 +87,11 @@ const Settings = () => {
   // console.log("User", user.user._id);
   // console.log("USerPic", user.user);
 
-  const handleUpload = (e) => {
-    let file = e?.target?.files[0];
-    if (file != null) setUploadFile(file);
-    // console.log(file)
-  };
+  // const handleUpload = (e) => {
+  //   let file = e?.target?.files[0];
+  //   if (file != null) setUploadFile(file);
+  //   // console.log(file)
+  // };
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
@@ -247,14 +247,14 @@ const Settings = () => {
           <div className="settingsPP">
             {uploadFile ? (
               <>
-                {/* {console.log("uploadfile", uploadFile)}
-                <img src={URL.createObjectURL(uploadFile)} alt="" /> */}
-                <input
+                {console.log("uploadfile", uploadFile)}
+                <img src={URL.createObjectURL(uploadFile)} alt="" />
+                {/* <input
                   accept="image/*"
                   type="file"
                   hidden
                   onChange={(e) => handleUpload(e)}
-                />
+                /> */}
               </>
             ) : (
               <img src={PF + user.user.profilePic} alt="" />
