@@ -15,8 +15,7 @@ const Home = () => {
     const fetchPosts = async () => {
       // const res = await axios.get("http://localhost:4000/api/v1/post/posts");
       const { data } = await axios.get(
-        "https://blogapp-backend-production.up.railway.app/api/v1/post/posts" +
-          search
+        "https://blogapp-backend-production.up.railway.app/api/v1/post/posts" + search
       );
       // console.log(data);
       setPosts(data);

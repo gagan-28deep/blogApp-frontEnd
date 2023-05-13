@@ -9,16 +9,25 @@ const Posts = ({ posts }) => {
   //   );
   //   console.log("Hello");
   // }, 10000);
+  // return (
+  //   <div className="posts">
+  //     {posts.map((post) => (
+  //       <Post key={post._id} post={post} />
+  //     ))}
+  //     {/* <Post />
+  //     <Post />
+  //     <Post />
+  //     <Post />
+  //     <Post /> */}
+  //   </div>
+  // );
   return (
     <div className="posts">
-      {posts.map((post) => (
-        <Post key={post._id} post={post} />
-      ))}
-      {/* <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post /> */}
+      {posts.length > 0
+        ? posts.map((post) => {
+            return <Post key={post._id} post={post} />;
+          })
+        : "No Posts Yet..."}
     </div>
   );
 };
